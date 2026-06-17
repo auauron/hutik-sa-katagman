@@ -1,0 +1,35 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c2bb1nh8otyyk"]
+
+[ext_resource type="Texture2D" uid="uid://i03faqlc7mvk" path="res://assets/game/tilemap/tilemap.png" id="1_tjtrf"]
+[ext_resource type="Texture2D" uid="uid://don5srx0ago53" path="res://assets/game/tilemap/stone.png" id="2_tkbyn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkbyn"]
+texture = ExtResource("1_tjtrf")
+texture_region_size = Vector2i(144, 144)
+27:0/size_in_atlas = Vector2i(9, 9)
+27:0/0 = 0
+3:0/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1amf"]
+texture = ExtResource("2_tkbyn")
+texture_region_size = Vector2i(32, 32)
+0:1/size_in_atlas = Vector2i(3, 2)
+0:1/0 = 0
+3:1/size_in_atlas = Vector2i(3, 2)
+3:1/0 = 0
+6:1/size_in_atlas = Vector2i(3, 2)
+6:1/0 = 0
+
+[resource]
+tile_size = Vector2i(144, 144)
+sources/0 = SubResource("TileSetAtlasSource_tkbyn")
+sources/1 = SubResource("TileSetAtlasSource_v1amf")
