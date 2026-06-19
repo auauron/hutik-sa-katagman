@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://bsjrnxo2ave5u"]
+[gd_scene load_steps=4 format=4 uid="uid://xh6vbf5fk6np"]
 
 [ext_resource type="TileSet" uid="uid://c2bb1nh8otyyk" path="res://tilesets/game_tile_set.tres" id="1_mhild"]
 [ext_resource type="PackedScene" uid="uid://cknextrl2x07q" path="res://scenes/characters/player.tscn" id="2_q17pk"]
+[ext_resource type="PackedScene" uid="uid://dfa0ssj5ayec" path="res://scenes/components/tree.tscn" id="3_vcgnq"]
 
 [node name="TestSceneTilemap" type="Node2D"]
 
@@ -12,10 +13,21 @@ tile_map_data = PackedByteArray("AAAHAAAAAAACAAAAAAAHAAQAAAACAAIAAAAAAAAAAAAAAAA
 tile_set = ExtResource("1_mhild")
 
 [node name="Stone" type="TileMapLayer" parent="GameTileMap"]
+tile_set = ExtResource("1_mhild")
+
+[node name="Grass" type="TileMapLayer" parent="GameTileMap"]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAABAAEAAQAAAAEAAAAEAAIAAQADAAEAAAAGAAMAAQAGAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAgABAAEAAAAAAAEAAgAEAAEAAAABAAAAAgAIAAEAAAABAAEAAgAMAAEAAAA=")
+tile_set = ExtResource("1_mhild")
+
+[node name="Mushroom" type="TileMapLayer" parent="GameTileMap"]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAIABAABAAEAAAABAAIABAAHAAEAAAAAAAMABAAPAAEAAAA=")
 tile_set = ExtResource("1_mhild")
 
 [node name="Player" parent="." instance=ExtResource("2_q17pk")]
-position = Vector2(545, 403)
+z_index = 1
+position = Vector2(394, 418)
 scale = Vector2(0.5, 0.5)
+
+[node name="Tree" parent="." instance=ExtResource("3_vcgnq")]

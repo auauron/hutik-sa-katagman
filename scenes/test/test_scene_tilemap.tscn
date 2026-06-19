@@ -11,5 +11,25 @@ tile_map_data = PackedByteArray("AAAHAAAAAAACAAAAAAAHAAQAAAACAAIAAAAAAAAAAAAAAAA
 tile_set = ExtResource("1_3xul5")
 
 [node name="Stone" type="TileMapLayer" parent="GameTileMap"]
-tile_map_data = PackedByteArray("AAABAAEAAQAAAAEAAAAEAAIAAQADAAEAAAAGAAMAAQAGAAEAAAA=")
+tile_set = ExtResource("1_3xul5")
+
+[node name="Grass" type="TileMapLayer" parent="GameTileMap"]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAAAAgABAAEAAAAAAAEAAgAEAAEAAAABAAAAAgAIAAEAAAABAAEAAgAMAAEAAAA=")
+tile_set = ExtResource("1_3xul5")
+
+[node name="Mushroom" type="TileMapLayer" parent="GameTileMap"]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAIABAABAAEAAAABAAIABAAHAAEAAAAAAAMABAAPAAEAAAA=")
+tile_set = ExtResource("1_3xul5")
+
+[node name="Leaves" type="TileMapLayer" parent="GameTileMap"]
+z_index = 1
+scale = Vector2(0.7, 0.7)
+tile_map_data = PackedByteArray("AAAGAAEABgAHAAAAAAA=")
+tile_set = ExtResource("1_3xul5")
+
+[node name="Tree" type="TileMapLayer" parent="GameTileMap"]
+scale = Vector2(0.7, 0.7)
+tile_map_data = PackedByteArray("AAAGAAIABQAAAAEAAAA=")
 tile_set = ExtResource("1_3xul5")
