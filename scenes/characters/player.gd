@@ -6,5 +6,8 @@ var interact_target = null
 
 func _input(event):
 	if event.is_action_pressed("interact"):
-		if interact_target:
-			interact_target.enter()
+		print("pressed interact")
+		print(interact_target)
+		if interact_target and interact_target.has_method("interact"):
+			print("found target")
+			interact_target.interact()

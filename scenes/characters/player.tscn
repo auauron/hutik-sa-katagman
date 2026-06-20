@@ -173,6 +173,7 @@ height = 246.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_76oj4")
 
 [node name="Shadow" type="Node2D" parent="."]
@@ -203,3 +204,6 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("6_kqtwu")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
