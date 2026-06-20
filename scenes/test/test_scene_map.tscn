@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://dsbrfhg6dmxqd"]
+[gd_scene load_steps=6 format=4 uid="uid://dsbrfhg6dmxqd"]
 
+[ext_resource type="Script" uid="uid://8d6sgpmmi65q" path="res://scenes/test/test_scene_map.gd" id="1_jufbl"]
 [ext_resource type="TileSet" uid="uid://c2bb1nh8otyyk" path="res://tilesets/game_tile_set.tres" id="1_pdoca"]
 [ext_resource type="PackedScene" uid="uid://d4kvgfugpy4yx" path="res://scenes/components/house.tscn" id="2_5xmrg"]
 [ext_resource type="PackedScene" uid="uid://cknextrl2x07q" path="res://scenes/characters/player.tscn" id="3_x741s"]
 [ext_resource type="PackedScene" uid="uid://dfa0ssj5ayec" path="res://scenes/components/tree.tscn" id="4_x741s"]
 
 [node name="TestSceneTilemap" type="Node2D"]
+script = ExtResource("1_jufbl")
 
 [node name="GameTileMap" type="Node2D" parent="."]
 
@@ -44,3 +46,6 @@ position = Vector2(568, 412)
 [node name="Tree" parent="." instance=ExtResource("4_x741s")]
 z_index = 1
 position = Vector2(450, -296)
+
+[node name="OutsideHouseSpawn" type="Marker2D" parent="."]
+position = Vector2(307, 299)
