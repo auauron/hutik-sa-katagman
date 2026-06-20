@@ -1,26 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4kvgfugpy4yx"]
+[gd_scene load_steps=8 format=3 uid="uid://d4kvgfugpy4yx"]
 
 [ext_resource type="Script" uid="uid://ckws43b5dq4nr" path="res://scenes/components/house.gd" id="1_fudyg"]
 [ext_resource type="Texture2D" uid="uid://bhq71lxc0o8br" path="res://assets/game/objects/nipa hut.png" id="1_vrwvi"]
+[ext_resource type="Texture2D" uid="uid://8cyxgjewolie" path="res://assets/game/objects/nipa hut_roof.png" id="3_uwj5w"]
+[ext_resource type="Texture2D" uid="uid://ckkay7pn105xn" path="res://assets/game/objects/nipa hut_door.png" id="4_c7a1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fudyg"]
-size = Vector2(243, 262)
+size = Vector2(310, 254)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwj5w"]
 size = Vector2(100.5, 83)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7a1v"]
+size = Vector2(128.333, 24.9999)
+
 [node name="House" type="Node2D"]
 script = ExtResource("1_fudyg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Body" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(586, 316)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_vrwvi")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="Body"]
+position = Vector2(-976.667, -526.667)
+scale = Vector2(1.66667, 1.66667)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(581.5, 362)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/StaticBody2D"]
+z_index = 2
+position = Vector2(590, 330)
 shape = SubResource("RectangleShape2D_fudyg")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -28,6 +37,24 @@ shape = SubResource("RectangleShape2D_fudyg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(587.75, 525.5)
 shape = SubResource("RectangleShape2D_uwj5w")
+
+[node name="Roof" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(587, 319)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_uwj5w")
+
+[node name="Door" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(586, 316)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_c7a1v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/StaticBody2D"]
+position = Vector2(-4.16663, 307.5)
+shape = SubResource("RectangleShape2D_c7a1v")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

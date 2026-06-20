@@ -100,6 +100,7 @@ texture = ExtResource("5_lwivk")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -48.5, -64, -47.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_igael"]
 texture = ExtResource("6_pon1k")
@@ -112,16 +113,21 @@ texture = ExtResource("6_lwivk")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-59, -53)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(29.2307, 20.373, 119.58, 22.1445, 123.124, 116.037, 27.4592, 121.352)
 1:0/0 = 0
 1:0/0/texture_origin = Vector2i(-59, 0)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(22.5, -49.5, 100.291, -51.9756, 93.007, 0.885788, 82.3776, -13.2867, 36.317, -18.6014, 19.5, -23.5)
 2:0/0 = 0
 2:0/0/texture_origin = Vector2i(65, -53)
 3:0/0 = 0
 3:0/0/texture_origin = Vector2i(0, -50)
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-26.015, -3.02499, 79.255, 4.235, 84.6718, 84.6718, -71.8102, 82.5282, -64, 0.605003)
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(70, 0)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-110.723, -52.261, -23.9161, -64, -20.373, -16.8298, -27.4592, -18.6014, -108.951, -20.3729)
 5:0/0 = 0
 5:0/0/texture_origin = Vector2i(0, 50)
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64.662, -93.007, 58.9487, -93.2461, 64, -11.7897, -64, -11.7897)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yb5x"]
 texture = ExtResource("3_pudl8")
@@ -235,6 +241,7 @@ texture_region_size = Vector2i(32, 32)
 
 [resource]
 tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_v1amf")
 sources/2 = SubResource("TileSetAtlasSource_8yb5x")
 sources/3 = SubResource("TileSetAtlasSource_xa2g7")

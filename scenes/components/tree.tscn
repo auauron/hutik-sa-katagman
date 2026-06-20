@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfa0ssj5ayec"]
+[gd_scene load_steps=5 format=3 uid="uid://dfa0ssj5ayec"]
 
 [ext_resource type="Texture2D" uid="uid://dany8whpalwfo" path="res://assets/game/objects/tree3.png" id="1_exdyc"]
 [ext_resource type="Texture2D" uid="uid://doa7c7c35f7ca" path="res://assets/game/objects/top3.png" id="2_10xnx"]
+[ext_resource type="Script" uid="uid://dqkmlfk0ia5gl" path="res://scenes/components/shadow.gd" id="3_10xnx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exdyc"]
 radius = 44.0
@@ -23,3 +24,6 @@ texture = ExtResource("2_10xnx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(260, 377)
 shape = SubResource("CapsuleShape2D_exdyc")
+
+[node name="Shadow" type="Node2D" parent="."]
+script = ExtResource("3_10xnx")

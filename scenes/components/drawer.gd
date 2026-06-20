@@ -5,6 +5,7 @@ var busy = false
 
 func _on_area_2d_body_entered(body):
 	if body is Player:
+		print("Player near drawer")
 		body.interact_target = self
 
 func _on_area_2d_body_exited(body):
@@ -16,17 +17,11 @@ func interact():
 		return
 
 	if opened:
-		close_drawer()
+		$AnimatedSprite2D.play_backwards("open")
 	else:
-		open_drawer()
+		$AnimatedSprite2D.play("open")
 
-func open_drawer():
 	busy = true
-	$AnimatedSprite2D.play("open")
-
-func close_drawer():
-	busy = true
-	$AnimatedSprite2D.play("close")
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
