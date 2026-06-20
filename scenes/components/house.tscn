@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4kvgfugpy4yx"]
+
+[ext_resource type="Script" uid="uid://ckws43b5dq4nr" path="res://scenes/components/house.gd" id="1_fudyg"]
+[ext_resource type="Texture2D" uid="uid://bhq71lxc0o8br" path="res://assets/game/objects/nipa hut.png" id="1_vrwvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fudyg"]
+size = Vector2(243, 262)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwj5w"]
+size = Vector2(100.5, 83)
+
+[node name="House" type="Node2D"]
+script = ExtResource("1_fudyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(586, 316)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_vrwvi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(581.5, 362)
+shape = SubResource("RectangleShape2D_fudyg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(587.75, 525.5)
+shape = SubResource("RectangleShape2D_uwj5w")

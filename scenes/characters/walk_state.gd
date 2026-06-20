@@ -11,12 +11,11 @@ func _on_process(_delta : float) -> void:
 func _on_physics_process(_delta : float) -> void:
 	var direction: Vector2 = GameInputEvents.movement_input()
 
-	if direction != Vector2.ZERO:
-		if abs(direction.x) > abs(direction.y):
-			animated_sprite_2d.play("side_walk")
-			animated_sprite_2d.flip_h = direction.x < 0
-		else:
-			animated_sprite_2d.play("front_walk")
+	if direction.x != 0:
+		animated_sprite_2d.play("side_walk")
+		animated_sprite_2d.flip_h = direction.x < 0
+	else:
+		animated_sprite_2d.play("front_walk")
 
 	player.velocity = direction * speed
 	player.move_and_slide()
