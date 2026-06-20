@@ -16,8 +16,7 @@ func _on_physics_process(_delta : float) -> void:
 			animated_sprite_2d.play("side_walk")
 			animated_sprite_2d.flip_h = direction.x < 0
 		else:
-			animated_sprite_2d.play("side_walk")
-			animated_sprite_2d.flip_h = direction.x < 0
+			animated_sprite_2d.play("front_walk")
 
 	player.velocity = direction * speed
 	player.move_and_slide()

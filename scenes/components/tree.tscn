@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://doa7c7c35f7ca" path="res://assets/game/objects/top3.png" id="2_10xnx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exdyc"]
-radius = 28.0
-height = 252.0
+radius = 44.0
+height = 228.0
 
 [node name="Tree" type="Node2D"]
 
@@ -14,11 +14,12 @@ position = Vector2(263, 398)
 texture = ExtResource("1_exdyc")
 
 [node name="Leaves" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(249, 147)
 texture = ExtResource("2_10xnx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(264, 441)
+position = Vector2(260, 377)
 shape = SubResource("CapsuleShape2D_exdyc")

@@ -172,6 +172,7 @@ radius = 44.0
 height = 246.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_76oj4")
 
 [node name="Shadow" type="Node2D" parent="."]
