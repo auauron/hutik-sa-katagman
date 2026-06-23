@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0wwmldunhhuv"]
 
 [sub_resource type="SystemFont" id="SystemFont_vyx4b"]
+subpixel_positioning = 0
 
 [node name="UI" type="Node2D"]
 
