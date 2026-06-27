@@ -1,35 +1,132 @@
-[gd_scene load_steps=2 format=4 uid="uid://dgocjhcw2lgbg"]
+[gd_scene load_steps=15 format=3 uid="uid://dgocjhcw2lgbg"]
 
-[ext_resource type="TileSet" uid="uid://c2bb1nh8otyyk" path="res://tilesets/game_tile_set.tres" id="1_3xul5"]
+[ext_resource type="Script" uid="uid://8d6sgpmmi65q" path="res://scenes/test/test_scene_map.gd" id="1_map"]
+[ext_resource type="Texture2D" uid="uid://bt1eykyjmr1g7" path="res://assets/game/tilemap/Water Background color.png" id="2_water"]
+[ext_resource type="Texture2D" uid="uid://cvqv7rxgjb5ix" path="res://assets/game/tilemap/ground-2.png" id="3_land"]
+[ext_resource type="Texture2D" uid="uid://c70vak3yjha5h" path="res://assets/game/tilemap/grass.png" id="4_grass"]
+[ext_resource type="Texture2D" uid="uid://don5srx0ago53" path="res://assets/game/tilemap/stone.png" id="5_stone"]
+[ext_resource type="PackedScene" uid="uid://dfa0ssj5ayec" path="res://scenes/components/tree.tscn" id="6_tree"]
+[ext_resource type="PackedScene" uid="uid://d4kvgfugpy4yx" path="res://scenes/components/house.tscn" id="7_house"]
+[ext_resource type="PackedScene" uid="uid://muaumtmi4b3a" path="res://scenes/components/drawer.tscn" id="8_drawer"]
+[ext_resource type="PackedScene" uid="uid://cknextrl2x07q" path="res://scenes/characters/player.tscn" id="9_player"]
+[ext_resource type="Texture2D" uid="uid://cqpikw38k5om8" path="res://assets/game/tilemap/mushroom.png" id="10_mushroom"]
 
-[node name="TestSceneTilemap" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_water_left"]
+size = Vector2(560, 1440)
 
-[node name="GameTileMap" type="Node2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_water_right"]
+size = Vector2(355, 1440)
 
-[node name="Terrain" type="TileMapLayer" parent="GameTileMap"]
-tile_map_data = PackedByteArray("AAAHAAAAAAACAAAAAAAHAAQAAAACAAIAAAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAIAAAAHAAEAAAACAAEAAAAHAAIAAAACAAEAAAAHAAMAAAACAAEAAAABAAQAAAABAAIAAAACAAQAAAABAAIAAAADAAQAAAABAAIAAAAEAAQAAAABAAIAAAAFAAQAAAABAAIAAAAGAAQAAAABAAIAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAADAAMAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAGAAEAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAA=")
-tile_set = ExtResource("1_3xul5")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_water_top"]
+size = Vector2(1600, 320)
 
-[node name="Stone" type="TileMapLayer" parent="GameTileMap"]
-tile_set = ExtResource("1_3xul5")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_water_bottom"]
+size = Vector2(1857, 320)
 
-[node name="Grass" type="TileMapLayer" parent="GameTileMap"]
-scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAAAAgABAAEAAAAAAAEAAgAEAAEAAAABAAAAAgAIAAEAAAABAAEAAgAMAAEAAAA=")
-tile_set = ExtResource("1_3xul5")
+[node name="IslandWalkMap" type="Node2D"]
+script = ExtResource("1_map")
 
-[node name="Mushroom" type="TileMapLayer" parent="GameTileMap"]
-scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAIABAABAAEAAAABAAIABAAHAAEAAAAAAAMABAAPAAEAAAA=")
-tile_set = ExtResource("1_3xul5")
+[node name="WaterBackground" type="Node2D" parent="."]
+z_index = -20
 
-[node name="Leaves" type="TileMapLayer" parent="GameTileMap"]
+[node name="WaterTileA" type="Sprite2D" parent="WaterBackground"]
+scale = Vector2(10, 10)
+texture = ExtResource("2_water")
+
+[node name="WaterTileB" type="Sprite2D" parent="WaterBackground"]
+position = Vector2(512, 0)
+scale = Vector2(10, 10)
+texture = ExtResource("2_water")
+
+[node name="WaterTileC" type="Sprite2D" parent="WaterBackground"]
+position = Vector2(-298, 262)
+scale = Vector2(14.6562, 13.9063)
+texture = ExtResource("2_water")
+
+[node name="WalkableLand" type="Node2D" parent="."]
+z_index = -10
+
+[node name="IslandBase" type="Sprite2D" parent="WalkableLand"]
+position = Vector2(80, 70)
+scale = Vector2(7.2, 4.8)
+texture = ExtResource("3_land")
+
+[node name="LandTopLeft" type="Sprite2D" parent="WalkableLand"]
+position = Vector2(-350, -210)
+scale = Vector2(1.5, 1.2)
+texture = ExtResource("4_grass")
+
+[node name="LandTopRight" type="Sprite2D" parent="WalkableLand"]
+position = Vector2(510, -190)
+scale = Vector2(1.5, 1.2)
+texture = ExtResource("4_grass")
+
+[node name="LandBottomLeft" type="Sprite2D" parent="WalkableLand"]
+position = Vector2(-330, 350)
+scale = Vector2(1.4, 1.1)
+texture = ExtResource("4_grass")
+
+[node name="LandBottomRight" type="Sprite2D" parent="WalkableLand"]
+position = Vector2(510, 340)
+scale = Vector2(1.4, 1.1)
+texture = ExtResource("4_grass")
+
+[node name="StonePath" type="Node2D" parent="."]
+z_index = -4
+
+[node name="StonePathMain" type="Sprite2D" parent="StonePath"]
+position = Vector2(-747, -256)
+scale = Vector2(0.933333, 0.9)
+texture = ExtResource("5_stone")
+
+[node name="StonePathLower" type="Sprite2D" parent="StonePath"]
+position = Vector2(-552, 393)
+scale = Vector2(0.863333, 0.951389)
+texture = ExtResource("5_stone")
+
+[node name="House" parent="." instance=ExtResource("7_house")]
+position = Vector2(-640, -600)
+
+[node name="Drawer" parent="." instance=ExtResource("8_drawer")]
+position = Vector2(-1160, -418)
+scale = Vector2(0.75, 0.75)
+
+[node name="Player" parent="." instance=ExtResource("9_player")]
+position = Vector2(120, 320)
+
+[node name="TreeNorthWest" parent="." instance=ExtResource("6_tree")]
+position = Vector2(-520, -420)
+scale = Vector2(0.72, 0.72)
+
+[node name="TreeSouthWest" parent="." instance=ExtResource("6_tree")]
+position = Vector2(-952, 24)
+scale = Vector2(0.7, 0.7)
+
+[node name="Decor" type="Node2D" parent="."]
 z_index = 1
-scale = Vector2(0.7, 0.7)
-tile_map_data = PackedByteArray("AAAGAAEABgAHAAAAAAA=")
-tile_set = ExtResource("1_3xul5")
 
-[node name="Tree" type="TileMapLayer" parent="GameTileMap"]
-scale = Vector2(0.7, 0.7)
-tile_map_data = PackedByteArray("AAAGAAIABQAAAAEAAAA=")
-tile_set = ExtResource("1_3xul5")
+[node name="MushroomPatch" type="Sprite2D" parent="Decor"]
+position = Vector2(-330, -9)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_mushroom")
+
+[node name="LandWaterBounds" type="StaticBody2D" parent="."]
+
+[node name="WaterLeftBlock" type="CollisionShape2D" parent="LandWaterBounds"]
+position = Vector2(-1212, 95)
+shape = SubResource("RectangleShape2D_water_left")
+
+[node name="WaterRightBlock" type="CollisionShape2D" parent="LandWaterBounds"]
+position = Vector2(313, -105)
+shape = SubResource("RectangleShape2D_water_right")
+
+[node name="WaterTopBlock" type="CollisionShape2D" parent="LandWaterBounds"]
+position = Vector2(-162, -464)
+shape = SubResource("RectangleShape2D_water_top")
+
+[node name="WaterBottomBlock" type="CollisionShape2D" parent="LandWaterBounds"]
+position = Vector2(-39.5, 576)
+shape = SubResource("RectangleShape2D_water_bottom")
+
+[node name="OutsideHouseSpawn" type="Marker2D" parent="."]
+position = Vector2(-55, 175)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Hutik sa Katagman"
-run/main_scene="uid://dgocjhcw2lgbg"
+run/main_scene="uid://dsbrfhg6dmxqd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
